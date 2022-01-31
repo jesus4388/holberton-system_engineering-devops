@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f | wc -la !pth .
+find . -type f ! -path . | wc -la
