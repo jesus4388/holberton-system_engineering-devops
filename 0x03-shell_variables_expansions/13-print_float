@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%2. f" num
+printf "%2. f" $NUM
