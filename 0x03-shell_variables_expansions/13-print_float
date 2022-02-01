@@ -1,2 +1,2 @@
 #!/bin/bash
-round(numero, 2)
+printf "%2.f"
