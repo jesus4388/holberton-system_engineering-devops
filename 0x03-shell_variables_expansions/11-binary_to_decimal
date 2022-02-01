@@ -1,0 +1,2 @@
+#!/bin/bash
+hexadecimal=$(echo "ibase=2;obase=10;$decimal" | bc)
