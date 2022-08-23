@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
-#Your Bash script must accept 2 arguments
+#Display information about subdomains
 
 func()
 {
   if [ -z "$2" ]
   then
-    subdominio=("www" "lb-01" "web-01" "web-02")
+    sub_domains=("www" "lb-01" "web-01" "web-02")
   else
-    subdominio=( "$2" )
-  fi
-  for i in "${subdominio[@]}"
-  do
-    echo -n "The subdomain $i"
-    dig "$i.$1" | grep -A1 'ANSWER SECTION:' | tail -n -1\
-	    |awk '{print " is a " $4 " record and points to " $5}'
-  done
+    sub_domains=( "$2" )
+  fi 
+  for sub_domain in "${sub_domains[@]}"
+  do 
+    echo -n "The subdomain $sub_domain"
+    dig "$sub_domain.$1" | grep -A1 'ANSWER SECTION:' | tail -n -1\
+    |awk '{ print " is a " $4 " record and points to " $5}' 
+	done
 }
 func "$1" "$2"
 exit 0
