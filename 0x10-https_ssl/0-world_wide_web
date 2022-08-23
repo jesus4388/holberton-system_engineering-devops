@@ -12,7 +12,7 @@ func()
   for i in "${sub_dominio[@]}"
   do
     echo -n "The subdomain $i"
-    dig "$i.$1" | grep -A1 'ANSWER SECTION:' | tail -n -1 |awk '{
+    sudo dig "$i.$1" | grep -A1 'ANSWER SECTION:' | tail -n -1 |awk '{
     print " is a " $4 " record and points to " $5}'
   done
 }
