@@ -9,4 +9,4 @@ sudo chmod -R 777 /var/www/html/
 sudo echo "Hello World!" > /var/www/html/index.html
 var=$(cat /proc/sys/kernel/hostname)
 sudo sed -i '/http {/a add_header X-Served-By '"${var}"';' /etc/nginx/nginx.conf
-sudo service nginx start
+sudo service nginx restart
