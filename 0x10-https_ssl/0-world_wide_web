@@ -7,7 +7,7 @@ func()
 	then
 		sub_dominio=("www" "lb-01" "web-01" "web-02")
 	else
-		sub_dominio=( "$2" )
+		sub_dominio=$2
 	fi
 	for i in "${sub_dominio[@]}"
 	do
@@ -17,4 +17,3 @@ func()
 	done
 }
 func "$1" "$2"
-exit 0
