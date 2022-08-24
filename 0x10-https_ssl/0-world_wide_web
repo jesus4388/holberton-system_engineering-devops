@@ -5,14 +5,14 @@ func()
 {
   if [ -z "$2" ]
   then
-    sub_domains=("www" "lb-01" "web-01" "web-02")
+    subdominio=("www" "lb-01" "web-01" "web-02")
   else
-    sub_domains=( "$2" )
+    subdominio=( "$2" )
   fi 
-  for sub_domain in "${sub_domains[@]}"
+  for subdomain in "${subdominio[@]}"
   do 
-    echo -n "The subdomain $sub_domain"
-    dig "$sub_domain.$1" | grep -A1 'ANSWER SECTION:' | tail -n -1\
+    echo -n "The subdomain $subdomain"
+    dig "$subdomain.$1" | grep -A1 'ANSWER SECTION:' | tail -n -1\
     |awk '{ print " is a " $4 " record and points to " $5}' 
 	done
 }
