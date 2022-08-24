@@ -1,2 +1,1 @@
- * Reloading nginx configuration nginx
-   ...done.
+sudo: /etc/init.d/ngin: command not found
