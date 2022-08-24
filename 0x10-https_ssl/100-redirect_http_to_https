@@ -1,0 +1,16 @@
+frontend myfrontend
+        bind *:80
+        bind *:443 ssl crt /etc/ssl/www.jesus4388.tech/www.jesus4388.tech.pem
+        redirect scheme https code 301 if !{ ssl_fc }
+        acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+        use_backend letsencrypt-backend if letsencrypt-acl
+        default_backend web_servers
+
+backend web_servers
+        balance roundrobin
+        server 4388-web-01 3.80.74.192:80 check
+        server 4388-web-02 54.152.128.19:80 check
+
+backend letsencrypt-backend
+        server letsencrypt 127.0.0.1:8888
+
