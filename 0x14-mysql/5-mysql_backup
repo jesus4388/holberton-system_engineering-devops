@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # create backup
-dt = $(date '+%d-%m-%y')
+dt=$(date '+%d-%m-%y')
 echo $dt
 mysqldump --user=root --password=$1 --all-databases --master-data | sudo tee backup.sql
-tar -cvzf $dt.tar.gz backup.sql
+tar -czvf $dt.tar.gz backup.sql
