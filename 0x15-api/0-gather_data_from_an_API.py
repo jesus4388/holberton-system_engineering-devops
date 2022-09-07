@@ -26,4 +26,4 @@ if __name__ == "__main__":
         name, completed, task))
     for _dict in todos:
         if _dict.get('completed') is True:
-            print("\t",_dict.get('title'))
+            print("\t", _dict.get('title'))
