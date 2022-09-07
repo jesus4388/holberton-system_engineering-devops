@@ -18,9 +18,9 @@ if __name__ == '__main__':
     posts = posts.json()
 
     with open("{}".format(argv[1]) + ".csv", "w") as f:
-        result = csv.writer(f, dialect='unix')
+        writer = csv.writer(f, dialect='unix')
         for _dic in posts:
-            result.writerow(
+            writer.writerow(
                     [argv[1],
                         name,
                         _dic.get('completed'),
