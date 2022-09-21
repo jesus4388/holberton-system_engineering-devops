@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """prints the titles of the first 10 hot posts listed"""
-
 import requests
 
 headers = {
@@ -24,7 +23,7 @@ def top_ten(subreddit):
             ti = dic.get('data')
             print(ti.get('title'))
             count += 1
-            if count == 9:
+            if count == 10:
                 break
 
     except Exception:
